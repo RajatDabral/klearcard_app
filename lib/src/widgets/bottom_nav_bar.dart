@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:klearcard_app/src/theme/styles.dart';
+import 'package:klearcard_app/src/widgets/widgets.dart';
 
 class BottomNavScreen extends StatefulWidget {
   @override
@@ -39,7 +40,14 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
                   .entries
                   .map(
                     (mE) => GestureDetector(
-                      onTap: () => _selectedIndex.value = mE.key,
+                      onTap: () {
+                        _selectedIndex.value = mE.key;
+                        // if (_selectedIndex.value == 0)
+                        //   showModalBottomSheet(
+                        //     context: context,
+                        //     builder: (context) => Transcation(),
+                        //   );
+                      },
                       child: _buildBottomItem(mE.value, mE.key),
                     ),
                   )

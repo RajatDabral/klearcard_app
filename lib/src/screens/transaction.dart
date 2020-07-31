@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:klearcard_app/src/helper/calendar_helper.dart';
 import 'package:klearcard_app/src/model/expense_model.dart';
 import 'package:klearcard_app/src/provider/expense_provider.dart';
 import 'package:klearcard_app/src/theme/styles.dart';
-import 'package:klearcard_app/src/widgets/transcaction_tile.dart';
 import 'package:klearcard_app/src/widgets/transcation_display_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -22,38 +20,40 @@ class Transcation extends StatelessWidget {
             ),
             color: Colors.white,
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Container(
-                height: 5,
-                width: 30,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5.0),
-                  color: Colors.grey,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Container(
+                  height: 5,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.0),
+                    color: Colors.grey,
+                  ),
                 ),
-              ),
-              SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    "Transactions",
-                    style: KStyles.headerBoldStyle.copyWith(fontSize: 20),
-                  ),
-                  Icon(
-                    Icons.sort,
-                    size: 30,
-                    color: Colors.black45,
-                  ),
-                ],
-              ),
-              SizedBox(height: 20),
-              Column(
-                children: _buildTranscationItems(list, context),
-              ),
-            ],
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      "Transactions",
+                      style: KStyles.headerBoldStyle.copyWith(fontSize: 20),
+                    ),
+                    Icon(
+                      Icons.sort,
+                      size: 30,
+                      color: Colors.black45,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Column(
+                  children: _buildTranscationItems(list, context),
+                ),
+              ],
+            ),
           ),
         );
       },

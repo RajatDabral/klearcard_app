@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:klearcard_app/src/provider/expense_provider.dart';
-import 'package:klearcard_app/src/screens/bottom_nav_screen.dart';
+import 'package:klearcard_app/src/widgets/bottom_nav_bar.dart';
 import 'package:klearcard_app/src/widgets/carousel.dart';
 import 'package:klearcard_app/src/widgets/widgets.dart';
 import 'package:provider/provider.dart';
