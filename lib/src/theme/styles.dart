@@ -38,4 +38,10 @@ class KStyles {
     fontSize: 15.0,
     color: Colors.white,
   );
+
+  static TextStyle bottomItem = TextStyle(
+    fontWeight: FontWeight.normal,
+    fontSize: 10.0,
+    color: Colors.blue[800],
+  );
 }
