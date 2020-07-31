@@ -30,6 +30,8 @@ class _TransactionDisplayState extends State<TransactionDisplay> {
   Widget build(BuildContext context) {
     final totalAmount =
         Provider.of<ExpenseProvider>(context, listen: false).totalAmount;
+    final amount1 = totalAmount.toStringAsFixed(0);
+    final amount2 = totalAmount.toStringAsFixed(2).split(".")[1];
     return Container(
       margin: EdgeInsets.symmetric(vertical: 20),
       height: MediaQuery.of(context).size.height * .30,
@@ -48,7 +50,26 @@ class _TransactionDisplayState extends State<TransactionDisplay> {
                   fontSize: 18,
                 ),
               ),
-              Text("${totalAmount.toStringAsFixed(2)} S\$"),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: amount1,
+                      style: KStyles.amountStyle.copyWith(
+                        color: Colors.black,
+                        fontSize: 15,
+                      ),
+                    ),
+                    TextSpan(
+                      text: ".$amount2 S\$",
+                      style: KStyles.amountStyle.copyWith(
+                        color: Colors.black12,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
           ...widget.transactionModel.expense.map(
