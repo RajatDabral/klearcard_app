@@ -1,6 +1,6 @@
 # klearcard_app
 
-App developed in flutter.
+Application developed in flutter
 
 ## Information
 
